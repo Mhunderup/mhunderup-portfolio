@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
 
 function App() {
   return (
@@ -19,6 +21,32 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}
+
+export function Association() {
+  const [association, setAssociation] = useState("Family Friend");
+
+  return (
+    <>
+      <h1>To Matthew, I am: {association}!</h1>
+      <button
+        type="button"
+        onClick={() => setAssociation("Family")}
+      >Family</button>
+      <button
+        type="button"
+        onClick={() => setAssociation("School Friend/Acquaintance")}
+      >School Friend/Acquaintance</button>
+      <button
+        type="button"
+        onClick={() => setAssociation("Potential Employer")}
+      >Potential Employer</button>
+      <button
+        type="button"
+        onClick={() => setAssociation("Other")}
+      >Other</button>
+    </>
   );
 }
 
